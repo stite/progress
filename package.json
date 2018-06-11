@@ -1,0 +1,21 @@
+{
+  "name": "pregress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "progress.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel": "babel progress.js -d build",
+    "build": "uglifyjs build/progress.js -o build/progress.min.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015-script": "^1.1.0"
+  },
+  "dependencies": {
+    "uglify-js": "^3.4.0"
+  }
+}
