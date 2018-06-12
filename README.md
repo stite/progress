@@ -51,6 +51,7 @@
         </tr>
     </tbody>
 </table>
+
 例：
 ```js
 var progress = new progress({
