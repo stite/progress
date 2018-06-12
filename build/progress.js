@@ -2,7 +2,7 @@
  * @Author: XiaoMing 
  * @Date: 2018-06-01 17:17:09 
  * @Last Modified by: Xiao.Ming
- * @Last Modified time: 2018-06-11 18:50:54
+ * @Last Modified time: 2018-06-12 14:32:49
  */
 !function (global) {
   "use strict";
@@ -35,8 +35,7 @@
       id: 'no-Progress', // 自定义loadID
       domload: false, // DOM加载完则隐藏load
       width: 'process-width',
-      number: 'process-number',
-      success: function success() {}
+      number: 'process-number'
     };
     _this = this;
     this.resetData = {};
@@ -82,6 +81,10 @@
       document.addEventListener('DOMContentLoaded', function (e) {
         var randomDom = parseInt(Math.random() * (100 - proNumber.target - 20));
         console.log('DOM加载完成');
+        if (_this2.resetData.domload) {
+          _this2.addTime(100, 100);
+          return false;
+        }
         var imgAddnumber = function imgAddnumber() {
           var imgDom = document.querySelectorAll('img');
           var imgSize = 0;

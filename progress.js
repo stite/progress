@@ -2,7 +2,7 @@
  * @Author: XiaoMing 
  * @Date: 2018-06-01 17:17:09 
  * @Last Modified by: Xiao.Ming
- * @Last Modified time: 2018-06-11 10:40:09
+ * @Last Modified time: 2018-06-12 14:32:49
  */
 !(function (global) {
   "use strict";
@@ -35,7 +35,6 @@
       domload: false, // DOM加载完则隐藏load
       width: 'process-width',
       number: 'process-number',
-      success: function () {}
     }
     _this = this;
     this.resetData = {};
@@ -79,6 +78,10 @@
       document.addEventListener('DOMContentLoaded', (e) => {
         const randomDom = parseInt(Math.random() * (100 - proNumber.target - 20));
         console.log('DOM加载完成');
+        if(this.resetData.domload){
+          this.addTime(100, 100);
+          return false;
+        }
         const imgAddnumber = () => {
           const imgDom = document.querySelectorAll('img');
           let imgSize = 0;
