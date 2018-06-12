@@ -73,4 +73,4 @@ progress.change(function(d){
   console.log(d);
 })
 ```
-(http://www.stite.net/content/progress/)[demo]
+[demo](http://www.stite.net/content/progress/)
