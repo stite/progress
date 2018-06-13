@@ -2,7 +2,7 @@
  * @Author: XiaoMing 
  * @Date: 2018-06-01 17:17:09 
  * @Last Modified by: Xiao.Ming
- * @Last Modified time: 2018-06-12 14:32:49
+ * @Last Modified time: 2018-06-13 17:24:27
  */
 !function (global) {
   "use strict";
@@ -72,7 +72,7 @@
       }
 
       // 数据变化时DOM跟着更新
-      this.domChange();
+      this.change();
 
       // 开始加载
       this.addTime(randomPro, 400);
@@ -131,17 +131,6 @@
       }, times);
     },
     change: function change(fn) {
-      Object.defineProperty(proNumber, 'number', {
-        set: function set(x) {
-          // 值变化时触发回调
-          fn(x);
-          if (x >= 100) {
-            resetData.success();
-          }
-        }
-      });
-    },
-    domChange: function domChange() {
       // 显示进度条
       var widthDom = document.getElementById(_this.resetData.width);
       var numberDom = document.getElementById(_this.resetData.number);
@@ -171,6 +160,8 @@
               }
             }, 500);
           }
+          // 值变化时触发回调
+          if (fn) fn(newNumber);
         }
       });
     }

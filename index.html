@@ -8,11 +8,7 @@
   <title>页面title</title>
   <script src="build/progress.min.js"></script>
   <script>
-    var progress = new progress({
-      id: 'jindu-load', // 自定义loadID
-      width: 'process-width',
-      number: 'process-dom',
-    });
+    var progress = new progress();
     progress.change(function(d){
       console.log(d);
     })
@@ -28,12 +24,13 @@
 </head>
 
 <body>
-  <div class="jindu-load" id="jindu-load">
+  <!-- <div class="jindu-load" id="jindu-load">
     <div class="j-l-span">
       <b class="j-l-s-b" id="process-width" style="width:1%"></b>
       <span id="process-dom">0%</span>
     </div>
-  </div>
+  </div> -->
+  <div style="width: 100%; height: 600px; line-height: 600px; font-size: 26px; text-align: center">这是页面内容<a href="https://github.com/stite/progress">GitHub</a></div>
   <img src="https://s1.tuchong.com/content-image/201805/161a6dd7fd3929e6cf30f708339dc46b.jpg" alt="">
   <img src="https://p9.pstatp.com/weili/l/57468577984413757.webp" alt="">
   <img src="https://p9.pstatps.com/weili/l/574685779844137574.jpg" alt="">
